@@ -2,13 +2,17 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   imports = [
     ./containers/keycloak.nix
 
     ./nginx.nix
     ./hardware-config.nix
+    ../base.nix
   ];
+
+  universe.base.enable = true;
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
@@ -26,8 +30,8 @@
 
   users.users.aurelia = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
-    packages = with pkgs; [];
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [ ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJmjGIsSO9jE85xNPzzp0AWfOSXVL4qQ3cuXeKCvxe+q"
     ];
