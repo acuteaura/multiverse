@@ -4,19 +4,23 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     quadlet.url = "github:SEIAROTg/quadlet-nix";
     flake-utils.url = "github:numtide/flake-utils";
+    universe.url = "github:acuteaura/universe";
   };
-  outputs = inputs @ {nixpkgs, ...}: let
-    nixpkgsConfig = import ./nixpkgs-config.nix {
-      inherit (nixpkgs.lib) getName;
-      extraOverlays = [];
-    };
-  in
+  outputs =
+    inputs@{ nixpkgs, ... }:
+    let
+      nixpkgsConfig = import ./nixpkgs-config.nix {
+        inherit (nixpkgs.lib) getName;
+        extraOverlays = [ ];
+      };
+    in
     {
       nixosConfigurations = {
         bootstrap = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             nixpkgsConfig
+            inputs.universe.nixosModules.universe
             inputs.quadlet.nixosModules.quadlet
             ./systems/bootstrap
           ];
@@ -24,12 +28,14 @@
       };
     }
     // inputs.flake-utils.lib.eachDefaultSystem (
-      system: let
+      system:
+      let
         pkgs = import nixpkgs {
           inherit system;
           inherit (nixpkgsConfig.nixpkgs) config overlays;
         };
-      in {
+      in
+      {
         formatter = pkgs.alejandra;
 
         apps.lint = {

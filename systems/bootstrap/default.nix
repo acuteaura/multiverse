@@ -9,7 +9,6 @@
 
     ./nginx.nix
     ./hardware-config.nix
-    ../base.nix
   ];
 
   universe.base.enable = true;
