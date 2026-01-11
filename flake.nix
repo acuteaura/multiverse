@@ -4,7 +4,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     quadlet.url = "github:SEIAROTg/quadlet-nix";
     flake-utils.url = "github:numtide/flake-utils";
-    universe.url = "github:acuteaura/universe";
+    universe = {
+      url = "github:acuteaura/universe";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{ nixpkgs, ... }:
