@@ -1,6 +1,6 @@
 {modulesPath, ...}: {
   imports = [(modulesPath + "/profiles/qemu-guest.nix")];
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.device = "/dev/sda";
 
   boot.kernelParams = ["console=tty"];
   boot.initrd.availableKernelModules = ["ata_piix" "uhci_hcd" "xen_blkfront" "vmw_pvscsi"];
