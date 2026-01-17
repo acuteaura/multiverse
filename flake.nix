@@ -19,8 +19,17 @@
     in
     {
       nixosConfigurations = {
-        bootstrap = nixpkgs.lib.nixosSystem {
+        yulai = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          modules = [
+            nixpkgsConfig
+            inputs.universe.nixosModules.universe
+            inputs.quadlet.nixosModules.quadlet
+            ./systems/yulai
+          ];
+        };
+        bootstrap = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
           modules = [
             nixpkgsConfig
             inputs.universe.nixosModules.universe
