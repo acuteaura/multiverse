@@ -57,6 +57,7 @@
         extraConfig = ''
           client_max_body_size 256M;
           allow 100.64.0.0/10;
+          allow 89.1.7.228;
           deny all;
         '';
       };

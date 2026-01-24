@@ -1,0 +1,5 @@
+{...}: {
+  pangolin = {
+    enable = "true";
+  };
+}

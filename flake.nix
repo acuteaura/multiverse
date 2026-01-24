@@ -9,14 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs =
-    inputs@{ nixpkgs, ... }:
-    let
-      nixpkgsConfig = import ./nixpkgs-config.nix {
-        inherit (nixpkgs.lib) getName;
-        extraOverlays = [ ];
-      };
-    in
+  outputs = inputs @ {nixpkgs, ...}: let
+    nixpkgsConfig = import ./nixpkgs-config.nix {
+      inherit (nixpkgs.lib) getName;
+      extraOverlays = [];
+    };
+  in
     {
       nixosConfigurations = {
         yulai = nixpkgs.lib.nixosSystem {
@@ -40,14 +38,12 @@
       };
     }
     // inputs.flake-utils.lib.eachDefaultSystem (
-      system:
-      let
+      system: let
         pkgs = import nixpkgs {
           inherit system;
           inherit (nixpkgsConfig.nixpkgs) config overlays;
         };
-      in
-      {
+      in {
         formatter = pkgs.alejandra;
 
         apps.lint = {
