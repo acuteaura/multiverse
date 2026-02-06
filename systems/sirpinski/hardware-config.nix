@@ -20,8 +20,9 @@
             };
             boot = {
               size = "2G";
-              type = "EF00";
-              attributes = [0];
+              format = "vfat";
+              mountpoint = "/boot";
+              mountOptions = [ "umask=0077" ];
             };
             root = {
               size = "100%";
