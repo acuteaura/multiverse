@@ -39,34 +39,35 @@
           };
         };
       };
-    };
-    zpools.sirpinski = {
-      type = "zpool";
-      rootFsOptions = {
-        encryption = "aes-256-gcm";
-        keyformat = "passphrase";
-        keylocation = "prompt";
-        mountpoint = "none";
-        compression = "zstd";
-        acltype = "posixacl";
-        xattr = "sa";
-      };
-      options.ashift = "12";
-      datasets = {
-        "root" = {
-          type = "zfs_fs";
-          options = {};
-          mountpoint = "/";
+
+      zpool.sirpinski = {
+        type = "zpool";
+        rootFsOptions = {
+          encryption = "aes-256-gcm";
+          keyformat = "passphrase";
+          keylocation = "prompt";
+          mountpoint = "none";
+          compression = "zstd";
+          acltype = "posixacl";
+          xattr = "sa";
         };
-        "nix" = {
-          type = "zfs_fs";
-          options.mountpoint = "/nix";
-          mountpoint = "/nix";
-        };
-        "home" = {
-          type = "zfs_fs";
-          options.mountpoint = "/home";
-          mountpoint = "/home";
+        options.ashift = "12";
+        datasets = {
+          "root" = {
+            type = "zfs_fs";
+            options = {};
+            mountpoint = "/";
+          };
+          "nix" = {
+            type = "zfs_fs";
+            options.mountpoint = "/nix";
+            mountpoint = "/nix";
+          };
+          "home" = {
+            type = "zfs_fs";
+            options.mountpoint = "/home";
+            mountpoint = "/home";
+          };
         };
       };
     };
