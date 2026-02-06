@@ -21,6 +21,8 @@ in {
   networking.hostName = "sirpinski";
   networking.domain = "nullvoid.space";
 
+  services.openssh.settings.PasswordAuthentication = false;
+
   users.users.root.openssh.authorizedKeys.keys = [
     ''${auraSSHKey}''
   ];
