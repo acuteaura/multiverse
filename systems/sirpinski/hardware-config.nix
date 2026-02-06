@@ -5,30 +5,32 @@
   boot.initrd.availableKernelModules = ["ata_piix" "uhci_hcd" "xen_blkfront" "vmw_pvscsi"];
   boot.initrd.kernelModules = ["nvme" "virtio_gpu"];
 
-  disko.devices = {
-    disk = {
-      main = {
-        device = "/dev/sda";
-        type = "disk";
-        content = {
-          type = "gpt";
-          partitions = {
-            bootsector = {
-              size = "1M";
-              type = "EF02";
-              attributes = [0];
-            };
-            boot = {
-              size = "2G";
-              format = "vfat";
-              mountpoint = "/boot";
-              mountOptions = ["umask=0077"];
-            };
-            root = {
-              size = "100%";
-              content = {
-                type = "zfs";
-                pool = "sirpinski";
+  disko = {
+    devices = {
+      disk = {
+        main = {
+          device = "/dev/sda";
+          type = "disk";
+          content = {
+            type = "gpt";
+            partitions = {
+              bootsector = {
+                size = "1M";
+                type = "EF02";
+                attributes = [0];
+              };
+              boot = {
+                size = "2G";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = ["umask=0077"];
+              };
+              root = {
+                size = "100%";
+                content = {
+                  type = "zfs";
+                  pool = "sirpinski";
+                };
               };
             };
           };
