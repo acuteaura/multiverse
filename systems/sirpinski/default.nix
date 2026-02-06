@@ -24,8 +24,6 @@ in {
     ''${auraSSHKey}''
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   users.users.aurelia = {
     isNormalUser = true;
     extraGroups = ["wheel"];
