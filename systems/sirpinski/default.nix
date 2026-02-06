@@ -16,6 +16,7 @@ in {
   zramSwap.enable = true;
 
   networking.useDHCP = lib.mkDefault true;
+  networking.hostId = "627b3692";
 
   networking.hostName = "sirpinski";
   networking.domain = "nullvoid.space";
