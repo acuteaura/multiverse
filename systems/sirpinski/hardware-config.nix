@@ -21,9 +21,11 @@
               };
               boot = {
                 size = "2G";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = ["umask=0077"];
+                content = {
+                  format = "vfat";
+                  mountpoint = "/boot";
+                  mountOptions = ["umask=0077"];
+                };
               };
               root = {
                 size = "100%";
