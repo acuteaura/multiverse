@@ -22,7 +22,7 @@
               size = "2G";
               format = "vfat";
               mountpoint = "/boot";
-              mountOptions = [ "umask=0077" ];
+              mountOptions = ["umask=0077"];
             };
             root = {
               size = "100%";
@@ -62,6 +62,7 @@
           type = "zfs_fs";
           options.mountpoint = "/home";
           mountpoint = "/home";
+        };
       };
     };
   };
