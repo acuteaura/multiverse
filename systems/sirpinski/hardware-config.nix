@@ -22,6 +22,7 @@
               boot = {
                 size = "2G";
                 content = {
+                  type = "filesystem";
                   format = "vfat";
                   mountpoint = "/boot";
                   mountOptions = ["umask=0077"];
