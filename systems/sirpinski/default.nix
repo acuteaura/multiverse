@@ -7,17 +7,17 @@
 in {
   imports = [
     ./hardware-config.nix
-    ./pangolin.nix
   ];
 
   universe.base.enable = true;
+  universe.kernel.enable = true;
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
 
   networking.useDHCP = lib.mkDefault true;
 
-  networking.hostName = "yulai";
+  networking.hostName = "sirpinski";
   networking.domain = "nullvoid.space";
 
   users.users.root.openssh.authorizedKeys.keys = [

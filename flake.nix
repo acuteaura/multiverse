@@ -2,6 +2,10 @@
   description = "aurelia's stable flake";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    inputs.disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
+    };
     quadlet.url = "github:SEIAROTg/quadlet-nix";
     flake-utils.url = "github:numtide/flake-utils";
     universe = {
@@ -17,13 +21,14 @@
   in
     {
       nixosConfigurations = {
-        yulai = nixpkgs.lib.nixosSystem {
+        sirpinski = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             nixpkgsConfig
             inputs.universe.nixosModules.universe
             inputs.quadlet.nixosModules.quadlet
-            ./systems/yulai
+            inputs.disko.nixosModules.disko
+            ./systems/sirpinski
           ];
         };
         bootstrap = nixpkgs.lib.nixosSystem {
