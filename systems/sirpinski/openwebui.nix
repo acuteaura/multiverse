@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services.tailscale.serve = {
     enable = true;
     services = {
@@ -26,8 +26,20 @@
     };
   };
 
-  services.sillytavern = {
+  services.sillytavern = let
+    sillytavernConfig = pkgs.writeText "sillytavern-config.yaml" ''
+      whitelistMode: true
+      enableForwardedWhitelist: true
+      whitelist:
+        - "::1"
+        - "127.0.0.1"
+        - "100.64.0.0/10"
+    '';
+  in {
     enable = true;
     port = 8045;
+    listen = true;
+    whitelist = true;
+    configFile = sillytavernConfig;
   };
 }
