@@ -9,6 +9,13 @@
         };
         advertised = true;
       };
+      tavern = {
+        endpoints = {
+          "tcp:443" = "http://localhost:8045";
+          "tcp:80" = "http://localhost:8045";
+        };
+        advertised = true;
+      };
     };
   };
 
@@ -18,4 +25,6 @@
       WEBUI_URL = "https://owui.atlas-ide.ts.net";
     };
   };
+
+  services.sillytavern.enable = true;
 }
