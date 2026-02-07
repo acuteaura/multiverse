@@ -26,5 +26,8 @@
     };
   };
 
-  services.sillytavern.enable = true;
+  services.sillytavern = {
+    enable = true;
+    port = 8045;
+  };
 }
