@@ -7,7 +7,8 @@
 in {
   imports = [
     ./hardware-config.nix
-    ./openwebui.nix
+    ./postgres.nix
+    ./llm-lab.nix
   ];
 
   universe.base.enable = true;

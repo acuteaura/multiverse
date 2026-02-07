@@ -35,6 +35,17 @@
         - "127.0.0.1"
         - "100.64.0.0/10"
       enableUserAccounts: true
+      thumbnails:
+        enabled: true
+        format: png
+        quality: 100
+        dimensions:
+          bg:
+            - 240
+            - 135
+          avatar:
+            - 864
+            - 1280
     '';
   in {
     enable = true;
