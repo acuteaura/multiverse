@@ -40,6 +40,6 @@
     port = 8045;
     listen = true;
     whitelist = true;
-    configFile = sillytavernConfig;
+    configFile = "${sillytavernConfig};
   };
 }
