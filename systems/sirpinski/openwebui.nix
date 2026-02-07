@@ -34,6 +34,7 @@
         - "::1"
         - "127.0.0.1"
         - "100.64.0.0/10"
+      enableUserAccounts: true
     '';
   in {
     enable = true;
