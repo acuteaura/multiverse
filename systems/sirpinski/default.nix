@@ -7,6 +7,7 @@
 in {
   imports = [
     ./hardware-config.nix
+    ./openwebui.nix
   ];
 
   universe.base.enable = true;
@@ -30,7 +31,6 @@ in {
   users.users.aurelia = {
     isNormalUser = true;
     extraGroups = ["wheel"];
-    packages = with pkgs; [];
     openssh.authorizedKeys.keys = [
       "${auraSSHKey}"
     ];

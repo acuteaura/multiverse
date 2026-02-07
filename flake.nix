@@ -1,7 +1,7 @@
 {
-  description = "aurelia's stable flake";
+  description = "aurelia's less unstable flake";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
