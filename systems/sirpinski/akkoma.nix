@@ -9,7 +9,7 @@
           email = "aurelia@nullvoid.space";
           registrations_open = false;
           invites_enabled = true;
-          federating = false;
+          federating = true;
           public = false;
         };
         ":media_proxy" = {
