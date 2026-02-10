@@ -14,7 +14,9 @@
     recommendedOptimisation = true;
     recommendedGzipSettings = true;
 
-    package = pkgs.tengine;
+    package = pkgs.nginxStable.override {
+      withSlice = true;
+    };
 
     appendHttpConfig = ''
       aio threads;
