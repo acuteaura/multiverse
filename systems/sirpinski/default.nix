@@ -7,6 +7,7 @@
 in {
   imports = [
     ./akkoma.nix
+    ./nginx.nix
     ./hardware-config.nix
     ./postgres.nix
     ./llm-lab.nix
