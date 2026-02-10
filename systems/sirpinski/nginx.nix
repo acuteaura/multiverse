@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   networking.firewall.allowedTCPPorts = [80 443];
 
-  security.acme.defaults.email = "past.tree1213@cognitive-antivirus.net";
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "past.tree1213@cognitive-antivirus.net";
+  };
 
   services.nginx = {
     enable = true;
