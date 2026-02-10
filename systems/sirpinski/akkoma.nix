@@ -8,7 +8,9 @@
           description = "akkoma on nullvoid.space";
           email = "aurelia@nullvoid.space";
           registrations_open = false;
+          invites_enabled = true;
           federating = false;
+          public = false;
         };
         ":media_proxy" = {
           enabled = true;
