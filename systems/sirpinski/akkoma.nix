@@ -4,7 +4,7 @@
     config = {
       ":pleroma" = with (pkgs.formats.elixirConf {}).lib; {
         ":instance" = {
-          name = "catsnuggl.es";
+          name = "nv_";
           description = "";
           email = "aurelia@nullvoid.space";
           registration_open = false;
@@ -23,7 +23,7 @@
         ":mrf_simple" = {};
 
         "Pleroma.Web.Endpoint" = {
-          url.host = "akkoma.dip0.catsnuggl.es";
+          url.host = "akkoma.dip0.e-ipconnect.nullvoid.space";
         };
       };
     };
