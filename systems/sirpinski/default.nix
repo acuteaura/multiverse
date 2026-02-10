@@ -6,6 +6,7 @@
   auraSSHKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJmjGIsSO9jE85xNPzzp0AWfOSXVL4qQ3cuXeKCvxe+q";
 in {
   imports = [
+    ./akkoma.nix
     ./hardware-config.nix
     ./postgres.nix
     ./llm-lab.nix
