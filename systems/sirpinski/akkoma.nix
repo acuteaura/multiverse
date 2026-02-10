@@ -5,7 +5,7 @@
       ":pleroma" = with (pkgs.formats.elixirConf {}).lib; {
         ":instance" = {
           name = "nv_";
-          description = "";
+          description = "akkoma on nullvoid.space";
           email = "aurelia@nullvoid.space";
           registration_open = false;
           federating = false;
