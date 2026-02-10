@@ -7,7 +7,7 @@
           name = "nv_";
           description = "akkoma on nullvoid.space";
           email = "aurelia@nullvoid.space";
-          registration_open = false;
+          registrations_open = false;
           federating = false;
         };
         ":media_proxy" = {
