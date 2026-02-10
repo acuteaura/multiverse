@@ -16,8 +16,9 @@
       superuser_map      akkoma    akkoma
     '';
     authentication = lib.mkOverride 10 ''
-      #type database  DBuser  auth-method optional_ident_map
-      local sameuser  all     peer        map=superuser_map
+      #type database  DBuser    auth-method optional_ident_map
+      local sameuser  all       peer        map=superuser_map
+      local all       postgres  peer        map=superuser_map
     '';
   };
 }
