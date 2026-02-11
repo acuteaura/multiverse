@@ -4,14 +4,14 @@
     services = {
       owui = {
         endpoints = {
-          "tcp:443" = "http://localhost:8080";
-          "tcp:80" = "http://localhost:8080";
+          #"tcp:443" = "http://localhost:8081";
+          "tcp:80" = "http://localhost:8081";
         };
         advertised = true;
       };
       tavern = {
         endpoints = {
-          "tcp:443" = "http://localhost:8045";
+          #"tcp:443" = "http://localhost:8045";
           "tcp:80" = "http://localhost:8045";
         };
         advertised = true;
@@ -24,6 +24,7 @@
     environment = {
       WEBUI_URL = "https://owui.atlas-ide.ts.net";
     };
+    port = 8081;
   };
 
   services.sillytavern = let

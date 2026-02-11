@@ -11,6 +11,7 @@ in {
     ./hardware-config.nix
     ./postgres.nix
     ./llm-lab.nix
+    ./gts.nix
   ];
 
   universe.base.enable = true;
