@@ -9,7 +9,7 @@
       db-address = "/run/postgresql";
       db-database = "gotosocial";
       db-user = "gotosocial";
-      port = 8081;
+      port = 8082;
       protocol = "https";
       storage-local-base-path = "/var/lib/gotosocial/storage";
     };
@@ -19,7 +19,7 @@
     enableACME = true;
     forceSSL = true;
     locations."/" = {
-      proxyPass = "http://127.0.0.1:8081";
+      proxyPass = "http://127.0.0.1:8082";
       proxyWebsockets = true;
       extraConfig = ''
         proxy_set_header X-Forwarded-For $remote_addr;
