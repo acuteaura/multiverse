@@ -1,4 +1,14 @@
 {pkgs, ...}: {
+  systemd.tmpfiles.rules = [
+    "d /var/cache/nginx/cache/akkoma-media-cache 0700 nginx nginx -"
+  ];
+
+  services.nginx.commonHttpConfig = ''
+    proxy_cache_path /var/cache/nginx/cache/akkoma-media-cache
+      levels= keys_zone=akkoma_media_cache:16m max_size=16g
+      inactive=1y use_temp_path=off;
+  '';
+
   systemd.services.akkoma.wantedBy = pkgs.lib.mkForce [];
 
   services.akkoma = {

@@ -566,11 +566,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1770197578,
-        "narHash": "sha256-AYqlWrX09+HvGs8zM6ebZ1pwUqjkfpnv8mewYwAo+iM=",
+        "lastModified": 1771008912,
+        "narHash": "sha256-gf2AmWVTs8lEq7z/3ZAsgnZDhWIckkb+ZnAo5RzSxJg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "00c21e4c93d963c50d4c0c89bfa84ed6e0694df2",
+        "rev": "a82ccc39b39b621151d6732718e3e250109076fa",
         "type": "github"
       },
       "original": {
@@ -768,11 +768,11 @@
     },
     "quadlet": {
       "locked": {
-        "lastModified": 1769966843,
-        "narHash": "sha256-enKACLREiXH8VhFwENIk++gWfjmvNi5Gy5ZS3JTT9B4=",
+        "lastModified": 1770606362,
+        "narHash": "sha256-6pOOPOQr4rtgShBtkLkSDTql5rRqcUgTRz8O+axK2eM=",
         "owner": "SEIAROTg",
         "repo": "quadlet-nix",
-        "rev": "50f2317ae3ed8b72fa3011091f88965bfec42c6c",
+        "rev": "f4ae60350ea6015b6560cbd0e1f11f7e195c993d",
         "type": "github"
       },
       "original": {
@@ -965,11 +965,11 @@
         "zen-browser": "zen-browser"
       },
       "locked": {
-        "lastModified": 1770116179,
-        "narHash": "sha256-IgFZNmmIvZ5B5V9M65Zk7F8HsnW1+WbrncMZ3+xi+Zk=",
+        "lastModified": 1770626432,
+        "narHash": "sha256-momKF/XJ2sluZXOmAlTnAEsOt4UgNpHGpnzLAFhP0ZU=",
         "owner": "acuteaura",
         "repo": "universe",
-        "rev": "8932122991ba37222610895fb1f8d2ac3333ed8b",
+        "rev": "b7beabb0bc5cf6e0e94eb168ab4fc1f63bcab2db",
         "type": "github"
       },
       "original": {
