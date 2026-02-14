@@ -9,14 +9,14 @@
       owui = {
         endpoints = {
           #"tcp:443" = "http://localhost:8081";
-          "tcp:80" = "http://localhost:${config.services.open-webui.port}";
+          "tcp:80" = "http://localhost:${toString config.services.open-webui.port}";
         };
         advertised = true;
       };
       tavern = {
         endpoints = {
           #"tcp:443" = "http://localhost:8045";
-          "tcp:80" = "http://localhost:${config.services.sillytavern.port}";
+          "tcp:80" = "http://localhost:${toString config.services.sillytavern.port}";
         };
         advertised = true;
       };
