@@ -38,5 +38,13 @@
         levels= keys_zone=akkoma_media_cache:16m max_size=16g
         inactive=1y use_temp_path=off;
     '';
+
+    virtualHosts."_" = {
+      rejectSSL = true;
+      default = true;
+      locations."/" = {
+        return = "404";
+      };
+    };
   };
 }
