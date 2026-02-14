@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  systemd.services.akkoma.wantedBy = pkgs.lib.mkForce [];
+
   services.akkoma = {
     enable = true;
     config = {
