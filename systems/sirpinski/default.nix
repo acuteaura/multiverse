@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   auraSSHKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJmjGIsSO9jE85xNPzzp0AWfOSXVL4qQ3cuXeKCvxe+q";
 in {
   imports = [
@@ -19,11 +15,32 @@ in {
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
 
-  networking.useDHCP = lib.mkDefault true;
+  networking.useDHCP = false;
+  networking.useNetworkd = true;
   networking.hostId = "627b3692";
 
   networking.hostName = "sirpinski";
   networking.domain = "nullvoid.space";
+
+  systemd.network = {
+    enable = true;
+    networks."10-wan" = {
+      matchConfig.Type = "ether";
+      networkConfig = {
+        DHCP = "ipv4";
+        IPv6AcceptRA = false;
+      };
+      address = [
+        "2a01:4f8:c012:262a::1/64"
+      ];
+      routes = [
+        {
+          Gateway = "fe80::1";
+          GatewayOnLink = true;
+        }
+      ];
+    };
+  };
 
   services.openssh.settings.PasswordAuthentication = false;
 
@@ -41,8 +58,6 @@ in {
   };
 
   programs.fish.enable = true;
-
-  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
 
   programs._1password.enable = true;
 
