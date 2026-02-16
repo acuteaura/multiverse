@@ -26,7 +26,7 @@ in {
         gotosocial
 
       # export federation-critical data (keys, follows, blocks) as a safety net
-      gotosocial-admin export --path ${backupDir}/gts-export.json
+      /run/current-system/sw/bin/gotosocial-admin export --path ${backupDir}/gts-export.json
     '';
 
     backupCleanupCommand = ''
