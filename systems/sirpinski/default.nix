@@ -7,6 +7,7 @@ in {
     ./postgres.nix
     ./llm-lab.nix
     ./gts.nix
+    ./backup.nix
   ];
 
   universe.base.enable = true;
