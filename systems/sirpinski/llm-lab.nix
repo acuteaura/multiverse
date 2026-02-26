@@ -14,14 +14,6 @@
         };
         advertised = true;
       };
-      tavern = {
-        endpoints = {
-          # https://github.com/tailscale/tailscale/issues/18381
-          #"tcp:443" = "http://localhost:8045";
-          "tcp:80" = "http://localhost:${toString config.services.sillytavern.port}";
-        };
-        advertised = true;
-      };
     };
   };
 
@@ -55,7 +47,7 @@
             - 1280
     '';
   in {
-    enable = true;
+    enable = false;
     port = 8045;
     listen = true;
     whitelist = true;
