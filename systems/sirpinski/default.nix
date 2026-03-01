@@ -12,6 +12,7 @@ in {
 
   universe.base.enable = true;
   universe.kernel.enable = true;
+  virtualisation.quadlet.autoEscape = true;
 
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
