@@ -12,6 +12,8 @@
       port = 8082;
       protocol = "https";
       storage-local-base-path = "/var/lib/gotosocial/storage";
+      accounts-allow-custom-css = false;
+      accounts-max-profile-fields = 12;
     };
   };
 
