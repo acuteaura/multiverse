@@ -8,6 +8,7 @@ in {
     ./llm-lab.nix
     ./gts.nix
     ./backup.nix
+    ./keycloak.nix
   ];
 
   universe.base.enable = true;
