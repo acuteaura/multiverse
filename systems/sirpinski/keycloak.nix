@@ -5,7 +5,6 @@
       username = "keycloak";
       name = "keycloak";
       host = "/run/postgresql";
-      createLocally = true;
     };
     plugins = with pkgs; [
       junixsocket-common
