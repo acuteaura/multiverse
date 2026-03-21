@@ -18,6 +18,9 @@
     };
   };
 
+  systemd.services.keycloak.environment.JAVA_OPTS_APPEND =
+    "-cp ${pkgs.junixsocket-common}/share/java/junixsocket-common.jar";
+
   services.nginx = {
     virtualHosts."id.nullvoid.space" = {
       forceSSL = true;
