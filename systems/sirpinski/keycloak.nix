@@ -14,6 +14,8 @@
     settings = {
       hostname = "https://id.nullvoid.space";
       http-port = 8084;
+      http-enabled = true;
+      proxy-headers = "xforwarded";
     };
   };
 
@@ -48,13 +50,6 @@
           deny all;
         '';
       };
-      # extraConfig = ''
-      #   ssl_client_certificate /etc/certificates/authenticated_origin_pull_ca.pem;
-      #   ssl_verify_client on;
-      #   ${realIpsFromList cfipv4}
-      #   ${realIpsFromList cfipv6}
-      #   real_ip_header CF-Connecting-IP;
-      # '';
     };
   };
 }
