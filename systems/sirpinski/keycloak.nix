@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   services.keycloak = {
+    enable = true;
     database = {
       username = "keycloak";
       name = "keycloak";
