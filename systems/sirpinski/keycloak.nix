@@ -4,7 +4,7 @@
     database = {
       username = "keycloak";
       name = "keycloak";
-      host = "/run/postgresql/.s.PGSQL.5432";
+      host = "/run/postgresql";
     };
     plugins = with pkgs; [
       junixsocket-common
