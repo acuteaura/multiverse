@@ -14,6 +14,7 @@
       storage-local-base-path = "/var/lib/gotosocial/storage";
       accounts-allow-custom-css = true;
       accounts-max-profile-fields = 12;
+      advanced-rate-limit-exceptions = ["89.1.7.228"]
     };
   };
 

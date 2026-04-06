@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.keycloak = {
-    enable = true;
+    enable = false;
     database = {
       username = "keycloak";
       name = "keycloak";
@@ -17,9 +17,6 @@
       proxy-headers = "xforwarded";
     };
   };
-
-  systemd.services.keycloak.environment.JAVA_OPTS_APPEND =
-    "-cp ${pkgs.junixsocket-common}/share/java/junixsocket-common.jar";
 
   services.nginx = {
     virtualHosts."id.nullvoid.space" = {
