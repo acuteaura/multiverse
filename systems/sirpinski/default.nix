@@ -72,6 +72,12 @@ in {
     5353
   ];
 
+  # systemd-networkd must not manage podman bridges or it will down them
+  systemd.network.networks."99-podman" = {
+    matchConfig.Name = "podman*";
+    linkConfig.Unmanaged = true;
+  };
+
   boot.loader.systemd-boot.configurationLimit = 5;
   nix.gc = {
     automatic = true;
