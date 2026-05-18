@@ -33,7 +33,7 @@ in {
   systemd.network = {
     enable = true;
     networks."10-wan" = {
-      matchConfig.Type = "ether";
+      matchConfig.Name = "enp*";
       networkConfig = {
         DHCP = "ipv4";
         IPv6AcceptRA = false;
