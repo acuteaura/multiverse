@@ -9,6 +9,7 @@ in {
     ./gts.nix
     ./backup.nix
     ./keycloak.nix
+    ./elk.nix
   ];
 
   universe.base.enable = true;
