@@ -14,7 +14,10 @@ in {
 
   universe.base.enable = true;
   universe.kernel.enable = true;
-  virtualisation.podman.enable = true;
+  virtualisation = {
+    containers.enable = true;
+    podman.enable = true;
+  };
   virtualisation.quadlet.autoEscape = true;
 
   boot.tmp.cleanOnBoot = true;
