@@ -1,4 +1,6 @@
 _: {
+  virtualisation.quadlet.networks.elk = {};
+
   virtualisation.quadlet.containers.elk = {
     containerConfig = {
       name = "elk";
@@ -10,6 +12,7 @@ _: {
         "NUXT_PUBLIC_DEFAULT_SERVER" = "gts.foxsnuggl.es";
         "NUXT_PUBLIC_SINGLE_INSTANCE" = "true";
       };
+      networks = ["elk.network"];
       publishPorts = ["127.0.0.1:8085:5314"];
     };
     unitConfig = {
