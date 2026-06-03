@@ -47,7 +47,7 @@
             - 1280
     '';
   in {
-    enable = false;
+    enable = true;
     port = 8045;
     listen = true;
     whitelist = true;
