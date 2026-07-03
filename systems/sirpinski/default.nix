@@ -10,6 +10,7 @@ in {
     ./backup.nix
     ./keycloak.nix
     ./elk.nix
+    ./overlays.nix
 #    ./mastodon.nix
   ];
 
