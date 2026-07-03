@@ -23,9 +23,6 @@
     enableACME = true;
     forceSSL = true;
 
-    locations."/api/".return = "403";
-    locations."/oauth/".return = "403";
-
     locations."/" = {
       proxyPass = "http://127.0.0.1:8082";
       proxyWebsockets = true;
