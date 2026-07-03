@@ -1,7 +1,7 @@
 {lib, ...}: {
   services.postgresql = {
     enable = true;
-    ensureDatabases = ["akkoma" "gotosocial" "keycloak"];
+    ensureDatabases = ["akkoma" "gotosocial" "keycloak" "mastodon"];
     ensureUsers = [
       {
         name = "akkoma";
@@ -18,6 +18,11 @@
         ensureDBOwnership = true;
         ensureClauses.login = true;
       }
+      {
+        name = "mastodon";
+        ensureDBOwnership = true;
+        ensureClauses.login = true;
+      }
     ];
     identMap = ''
       # ArbitraryMapName systemUser DBUser
@@ -26,6 +31,7 @@
       superuser_map      akkoma      akkoma
       superuser_map      gotosocial  gotosocial
       superuser_map      keycloak    keycloak
+      superuser_map      mastodon    mastodon
     '';
     authentication = lib.mkOverride 10 ''
       #type database  DBuser    auth-method optional_ident_map

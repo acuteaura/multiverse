@@ -10,6 +10,7 @@ in {
     ./backup.nix
     ./keycloak.nix
     ./elk.nix
+#    ./mastodon.nix
   ];
 
   universe.base.enable = true;
