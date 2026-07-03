@@ -15,7 +15,7 @@
       accounts-allow-custom-css = true;
       accounts-max-profile-fields = 12;
       advanced-rate-limit-exceptions = ["89.1.7.228/32"];
-      media-remote-cache-days = "90d";
+      media-remote-cache-duration = "90d";
     };
   };
 
