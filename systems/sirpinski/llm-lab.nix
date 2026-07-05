@@ -12,15 +12,14 @@
           #"tcp:443" = "http://localhost:8081";
           "tcp:80" = "http://localhost:${toString config.services.open-webui.port}";
         };
-        advertised = true;
+        advertised = config.services.open-webui.enable;
       };
       tavern = {
         endpoints = {
           # https://github.com/tailscale/tailscale/issues/18381
-          #"tcp:443" = "http://localhost:8081";
           "tcp:80" = "http://localhost:${toString config.services.sillytavern.port}";
         };
-        advertised = true;
+        advertised = config.services.sillytavern.enable;
       };
     };
   };
@@ -55,7 +54,7 @@
             - 1280
     '';
   in {
-    enable = true;
+    enable = false;
     port = 8045;
     listen = true;
     whitelist = true;
