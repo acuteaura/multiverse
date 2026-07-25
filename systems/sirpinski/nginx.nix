@@ -20,6 +20,14 @@
     #package = pkgs.nginxStable.override {
     #  withSlice = true;
     #};
+    #
+    virtualHosts."89.167.108.46" = {
+      rejectSSL = true;
+      default = true;
+      locations."/" = {
+        return = "404";
+      };
+    };
 
     appendHttpConfig = ''
       aio threads;

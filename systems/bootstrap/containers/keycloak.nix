@@ -1,8 +1,6 @@
 _: {
   virtualisation.quadlet.autoEscape = true;
 
-
-
   virtualisation.quadlet.networks.keycloak = {};
 
   virtualisation.quadlet.containers.keycloak-postgres = {

@@ -12,7 +12,7 @@ in {
     localDomain = federationDomain;
     extraConfig.WEB_DOMAIN = webDomain;
     configureNginx = false;
-    streamingProcesses = streamingProcesses;
+    inherit streamingProcesses;
     database = {
       createLocally = false;
       host = "/run/postgresql";

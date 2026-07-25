@@ -14,6 +14,5 @@
       ];
   };
   nixpkgs.overlays =
-    []
-    ++ extraOverlays;
+    extraOverlays;
 }
