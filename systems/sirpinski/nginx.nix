@@ -9,7 +9,7 @@
   services.nginx = {
     enable = true;
 
-    serverTokens = "off";
+    serverTokens = false;
 
     clientMaxBodySize = "16m";
     recommendedTlsSettings = true;
