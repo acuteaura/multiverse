@@ -1,4 +1,4 @@
 # W20: "Avoid repeated keys in attribute sets"
-disabled = ["repeated_keys"]
+disabled = ["repeated_keys", "empty_pattern"]
 nix_version = '2.4'
 ignore = ['.direnv']
