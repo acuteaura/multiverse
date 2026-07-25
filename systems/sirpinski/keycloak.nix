@@ -10,9 +10,14 @@
       name = "keycloak";
       host = "/run/postgresql";
     };
+    # fetchMavenArtifact outputs a symlink at share/java/*.jar, but Keycloak's
+    # plugin installer only picks up files matching `find -type f`, so the jar
+    # is silently skipped if we pass the package itself. `.jar` is the
+    # passthru attribute pointing directly at the underlying fetched file.
+    # See https://github.com/NixOS/nixpkgs/pull/472219.
     plugins = with pkgs; [
-      junixsocket-common
-      junixsocket-native-common
+      junixsocket-common.jar
+      junixsocket-native-common.jar
     ];
     settings = {
       hostname = "https://id.nullvoid.space";
