@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.keycloak = {
-    enable = false;
+    enable = true;
     database = {
       username = "keycloak";
       name = "keycloak";
@@ -15,6 +15,7 @@
       http-port = 8084;
       http-enabled = true;
       proxy-headers = "xforwarded";
+      db-schema = "keycloak";
     };
   };
 
