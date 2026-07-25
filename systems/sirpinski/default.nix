@@ -5,7 +5,7 @@ in {
     ./nginx.nix
     ./hardware-config.nix
     ./postgres.nix
-    ./llm-lab.nix
+    #./llm-lab.nix
     ./gts.nix
     ./gts-backup.nix
     ./keycloak.nix
