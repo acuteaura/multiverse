@@ -14,9 +14,10 @@
     recommendedOptimisation = true;
     recommendedGzipSettings = true;
 
-    package = pkgs.nginxStable.override {
-      withSlice = true;
-    };
+    # needed by akkoma config, but akkoma is ded
+    #package = pkgs.nginxStable.override {
+    #  withSlice = true;
+    #};
 
     appendHttpConfig = ''
       aio threads;
