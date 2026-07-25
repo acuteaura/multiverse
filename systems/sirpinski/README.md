@@ -5,4 +5,4 @@
 8083: nfty (inactive)
 8084: keycloak
 8045: tavern (inactive)
-8085: elk
+8085: elk (dead)

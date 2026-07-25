@@ -7,11 +7,11 @@ in {
     ./postgres.nix
     ./llm-lab.nix
     ./gts.nix
-    ./backup.nix
+    ./gts-backup.nix
     ./keycloak.nix
-    ./elk.nix
     ./overlays.nix
-#    ./mastodon.nix
+    # ./elk.nix
+    # ./mastodon.nix
   ];
 
   universe.base.enable = true;

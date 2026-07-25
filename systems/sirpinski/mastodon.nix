@@ -69,6 +69,7 @@ in {
   # https://docs.joinmastodon.org/admin/config/#web_domain
   services.nginx.virtualHosts.${federationDomain} = {
     forceSSL = true;
+    kTLS = true;
     enableACME = true;
     locations."/.well-known/host-meta".return = "301 https://${webDomain}$request_uri";
     locations."/.well-known/webfinger".return = "301 https://${webDomain}$request_uri";

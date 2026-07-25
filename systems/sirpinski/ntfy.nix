@@ -10,6 +10,7 @@
   services.nginx.virtualHosts."ntfy.foxsnuggl.es" = {
     enableACME = true;
     forceSSL = true;
+    kTLS = true;
     locations."/" = {
       proxyPass = "http://127.0.0.1:8083";
       proxyWebsockets = true;
