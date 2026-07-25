@@ -1,4 +1,4 @@
-{_}: {
+{...}: {
   services.gotosocial = {
     enable = true;
     settings = {

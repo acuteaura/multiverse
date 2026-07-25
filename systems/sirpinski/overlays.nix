@@ -1,4 +1,4 @@
-{_}: {
+{...}: {
   nixpkgs.overlays = [
     (final: prev: {
       gotosocial = prev.gotosocial.overrideAttrs (old: {
