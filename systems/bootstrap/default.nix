@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./containers/keycloak.nix
+    #./containers/keycloak.nix
 
     ./nginx.nix
     ./hardware-config.nix

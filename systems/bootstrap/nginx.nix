@@ -44,54 +44,6 @@
     #     return = "404";
     #   };
     # };
-
-    virtualHosts."id.nullvoid.space" = {
-      listen = defaultListenIPv4 ++ defaultListenIPv6;
-      forceSSL = true;
-      kTLS = true;
-      sslCertificate = "/var/lib/acme/id.nullvoid.space/fullchain.pem";
-      sslCertificateKey = "/var/lib/acme/id.nullvoid.space/key.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8080";
-        proxyWebsockets = true;
-        extraConfig = ''
-          client_max_body_size 256M;
-          allow 100.64.0.0/10;
-          allow 89.1.7.228;
-          deny all;
-        '';
-      };
-      locations."/realms/nvs" = {
-        proxyPass = "http://127.0.0.1:8080";
-        proxyWebsockets = true;
-        extraConfig = ''
-          client_max_body_size 256M;
-        '';
-      };
-      locations."/realms/nullvoid.space" = {
-        proxyPass = "http://127.0.0.1:8080";
-        proxyWebsockets = true;
-        extraConfig = ''
-          client_max_body_size 256M;
-        '';
-      };
-      locations."/resources" = {
-        proxyPass = "http://127.0.0.1:8080";
-        proxyWebsockets = true;
-      };
-      locations."/realms/nvs/metrics" = {
-        extraConfig = ''
-          deny all;
-        '';
-      };
-      # extraConfig = ''
-      #   ssl_client_certificate /etc/certificates/authenticated_origin_pull_ca.pem;
-      #   ssl_verify_client on;
-      #   ${realIpsFromList cfipv4}
-      #   ${realIpsFromList cfipv6}
-      #   real_ip_header CF-Connecting-IP;
-      # '';
-    };
   };
 
   security.acme = {
