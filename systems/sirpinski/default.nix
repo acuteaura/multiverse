@@ -5,13 +5,15 @@ in {
     ./nginx.nix
     ./hardware-config.nix
     ./postgres.nix
-    #./llm-lab.nix
+
     ./gts.nix
     ./gts-backup.nix
+
+    ./mastodon.nix
+
     ./keycloak.nix
+
     ./overlays.nix
-    # ./elk.nix
-    # ./mastodon.nix
   ];
 
   universe.base.enable = true;

@@ -1,6 +1,7 @@
 {...}: {
   nixpkgs.overlays = [
     (final: prev: {
+      # not backported to nixos-26.05
       gotosocial = prev.gotosocial.overrideAttrs (old: {
         version = "0.22.1";
         src = prev.fetchFromCodeberg {
