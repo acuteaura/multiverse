@@ -16,6 +16,11 @@ in {
     ./overlays.nix
   ];
 
+  networking.extraHosts = ''
+    89.167.108.46 gts.foxsnuggl.es
+    89.167.108.46 problematic.solutions
+  '';
+
   universe.base.enable = true;
   universe.kernel.enable = true;
   virtualisation = {
