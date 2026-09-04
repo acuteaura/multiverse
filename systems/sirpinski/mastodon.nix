@@ -71,10 +71,30 @@ in {
       forceSSL = true;
       kTLS = true;
       enableACME = true;
-      locations."/.well-known/host-meta".return = "301 https://${webDomain}$request_uri";
-      locations."/.well-known/webfinger".return = "301 https://${webDomain}$request_uri";
-      locations."/.well-known/nodeinfo".return = "301 https://${webDomain}$request_uri";
-      locations."/".return = "301 https://${webDomain}";
+      locations."/.well-known/host-meta" = {
+        return = "301 https://${webDomain}$request_uri";
+        extraConfig = ''
+          add_header Access-Control-Allow-Origin *;
+        '';
+      };
+      locations."/.well-known/webfinger" = {
+        return = "301 https://${webDomain}$request_uri";
+        extraConfig = ''
+          add_header Access-Control-Allow-Origin *;
+        '';
+      };
+      locations."/.well-known/nodeinfo" = {
+        return = "301 https://${webDomain}$request_uri";
+        extraConfig = ''
+          add_header Access-Control-Allow-Origin *;
+        '';
+      };
+      locations."/" = {
+        return = "301 https://${webDomain}";
+        extraConfig = ''
+          add_header Access-Control-Allow-Origin *;
+        '';
+      };
     };
   };
 
