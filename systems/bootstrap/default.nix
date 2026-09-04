@@ -4,8 +4,6 @@
   ...
 }: {
   imports = [
-    #./containers/keycloak.nix
-
     ./nginx.nix
     ./hardware-config.nix
   ];
@@ -39,8 +37,6 @@
   programs.fish.enable = true;
 
   systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
-
-  programs._1password.enable = true;
 
   # nixos sucks tbh
   networking.firewall.interfaces."podman*".allowedUDPPorts = [

@@ -71,8 +71,6 @@ in {
 
   programs.fish.enable = true;
 
-  programs._1password.enable = true;
-
   # nixos sucks tbh
   networking.firewall.interfaces."podman*".allowedUDPPorts = [
     53
