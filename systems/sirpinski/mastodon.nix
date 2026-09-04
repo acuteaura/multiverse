@@ -14,7 +14,7 @@ in {
     configureNginx = false;
     inherit streamingProcesses;
     database = {
-      createLocally = false;
+      createLocally = true;
       host = "/run/postgresql";
       name = "mastodon";
       user = "mastodon";
