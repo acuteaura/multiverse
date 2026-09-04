@@ -26,7 +26,7 @@ in {
     };
   };
 
-  users.groups.${config.services.mastodon.group}.members = config.services.nginx.user;
+  users.groups.${config.services.mastodon.group}.members = [ config.services.nginx.user ];
 
   services.nginx = {
     upstreams.mastodon-streaming = {
