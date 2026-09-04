@@ -19,6 +19,7 @@ in {
   networking.extraHosts = ''
     89.167.108.46 gts.foxsnuggl.es
     89.167.108.46 problematic.solutions
+    89.167.108.46 social.problematic.solutions
   '';
 
   universe.base.enable = true;
