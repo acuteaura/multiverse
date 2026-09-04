@@ -7,7 +7,6 @@
   webDomain = "social.problematic.solutions";
   streamingProcesses = 1;
 in {
-
   services.mastodon = {
     enable = true;
     localDomain = federationDomain;
@@ -27,7 +26,47 @@ in {
     };
   };
 
+  users.groups.${config.services.mastodon.group}.members = config.services.nginx.user;
+
   services.nginx = {
+    upstreams.mastodon-streaming = {
+      extraConfig = "least_conn;";
+      servers = builtins.listToAttrs (
+        map (i: {
+          name = "unix:/run/mastodon-streaming/streaming-${toString i}.socket";
+          value = {};
+        }) (lib.range 1 streamingProcesses)
+      );
+    };
+
+    virtualHosts.${webDomain} = {
+      root = "${config.services.mastodon.package}/public/";
+      forceSSL = true;
+      enableACME = true;
+
+      extraConfig = ''
+        client_max_body_size 100m;
+      '';
+
+      locations."/system/".alias = "/var/lib/mastodon/public-system/";
+
+      locations."/" = {
+        tryFiles = "$uri @proxy";
+      };
+
+      locations."@proxy" = {
+        proxyPass = "http://unix:/run/mastodon-web/web.socket";
+        proxyWebsockets = true;
+        recommendedProxySettings = true;
+      };
+
+      locations."/api/v1/streaming" = {
+        proxyPass = "http://mastodon-streaming";
+        proxyWebsockets = true;
+        recommendedProxySettings = true;
+      };
+    };
+
     virtualHosts.${federationDomain} = {
       forceSSL = true;
       kTLS = true;
