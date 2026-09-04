@@ -30,7 +30,6 @@
       recommendedProxySettings = true;
       extraConfig = ''
         client_max_body_size 100M;
-        return 410;
       '';
     };
   };
