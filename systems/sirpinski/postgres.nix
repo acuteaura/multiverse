@@ -15,7 +15,6 @@
       "work_mem" = "127100kB";
       "huge_pages" = "try";
       "jit" = "off";
-      "wal_compression" = "lz4";
       "min_wal_size" = "1GB";
       "max_wal_size" = "4GB";
       "max_worker_processes" = "8";
