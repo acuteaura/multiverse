@@ -89,12 +89,6 @@ in {
           add_header Access-Control-Allow-Origin *;
         '';
       };
-      locations."/" = {
-        return = "301 https://${webDomain}";
-        extraConfig = ''
-          add_header Access-Control-Allow-Origin *;
-        '';
-      };
     };
   };
 
