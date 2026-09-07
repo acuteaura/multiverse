@@ -1,6 +1,6 @@
 {pkgs, lib, ...}: {
   services.postgresql = {
-    package = pkgs.postgresql_16;
+    package = pkgs.postgresql_14;
 
     settings = {
       "max_connections" = "25";
