@@ -5,7 +5,6 @@
 }: let
   federationDomain = "problematic.solutions";
   webDomain = "social.problematic.solutions";
-  streamingProcesses = 1;
 in {
   services.mastodon = {
     enable = true;
@@ -13,7 +12,10 @@ in {
     extraConfig.WEB_DOMAIN = webDomain;
     redis.createLocally = true;
     configureNginx = false;
-    inherit streamingProcesses;
+    streamingProcesses = 7;
+    sidekiqThreads = 25;
+    webProcesses = 4;
+    webThreads = 4;
     database = {
       createLocally = true;
       host = "/run/postgresql";
