@@ -12,7 +12,7 @@ in {
     localDomain = federationDomain;
     extraConfig.WEB_DOMAIN = webDomain;
     redis.createLocally = true;
-    configureNginx = true;
+    configureNginx = false;
     inherit streamingProcesses;
     database = {
       createLocally = true;
