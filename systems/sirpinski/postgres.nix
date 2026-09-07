@@ -1,13 +1,32 @@
-{lib, ...}: {
+{pkgs, lib, ...}: {
   services.postgresql = {
+    package = pkgs.postgresql_16;
+
+    settings = {
+      "max_connections" = "25";
+      "shared_buffers" = "4GB";
+      "effective_cache_size" = "12GB";
+      "maintenance_work_mem" = "1GB";
+      "checkpoint_completion_target" = "0.9";
+      "wal_buffers" = "16MB";
+      "default_statistics_target" = "100";
+      "random_page_cost" = "1.1";
+      "effective_io_concurrency" = "200";
+      "work_mem" = "127100kB";
+      "huge_pages" = "try";
+      "jit" = "off";
+      "wal_compression" = "lz4";
+      "min_wal_size" = "1GB";
+      "max_wal_size" = "4GB";
+      "max_worker_processes" = "8";
+      "max_parallel_workers_per_gather" = "4";
+      "max_parallel_workers" = "8";
+      "max_parallel_maintenance_workers" = "4";
+    };
+
     enable = true;
-    ensureDatabases = ["akkoma" "gotosocial" "keycloak" "mastodon"];
+    ensureDatabases = ["gotosocial" "keycloak" "mastodon"];
     ensureUsers = [
-      {
-        name = "akkoma";
-        ensureDBOwnership = true;
-        ensureClauses.login = true;
-      }
       {
         name = "gotosocial";
         ensureDBOwnership = true;

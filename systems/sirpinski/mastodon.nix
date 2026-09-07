@@ -5,6 +5,7 @@
 }: let
   federationDomain = "problematic.solutions";
   webDomain = "social.problematic.solutions";
+  streamingProcesses = 7;
 in {
   services.mastodon = {
     enable = true;
@@ -12,7 +13,7 @@ in {
     extraConfig.WEB_DOMAIN = webDomain;
     redis.createLocally = true;
     configureNginx = false;
-    streamingProcesses = 7;
+    inherit streamingProcesses;
     sidekiqThreads = 25;
     webProcesses = 4;
     webThreads = 4;
