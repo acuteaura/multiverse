@@ -3,7 +3,7 @@
     package = pkgs.postgresql_14;
 
     settings = {
-      "max_connections" = "25";
+      "max_connections" = "200";
       "shared_buffers" = "4GB";
       "effective_cache_size" = "12GB";
       "maintenance_work_mem" = "1GB";
