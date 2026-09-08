@@ -1,6 +1,11 @@
 {pkgs, lib, ...}: {
   services.postgresql = {
+    enable = true;
+
     package = pkgs.postgresql_14;
+    extensions = ps: with ps; [
+      pg_stat_statements
+    ];
 
     settings = {
       "max_connections" = "200";
@@ -22,8 +27,6 @@
       "max_parallel_workers" = "8";
       "max_parallel_maintenance_workers" = "4";
     };
-
-    enable = true;
     ensureDatabases = ["gotosocial" "keycloak" "mastodon"];
     ensureUsers = [
       {
