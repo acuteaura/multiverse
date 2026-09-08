@@ -3,9 +3,7 @@
     enable = true;
 
     package = pkgs.postgresql_14;
-    extensions = ps: with ps; [
-      pg_stat_statements
-    ];
+    extensions = ps: [];
 
     settings = {
       "max_connections" = "200";
@@ -26,6 +24,9 @@
       "max_parallel_workers_per_gather" = "4";
       "max_parallel_workers" = "8";
       "max_parallel_maintenance_workers" = "4";
+
+      "shared_preload_libraries" = "pg_stat_statements";
+	    "compute_query_id" = "on";
     };
     ensureDatabases = ["gotosocial" "keycloak" "mastodon"];
     ensureUsers = [
