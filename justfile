@@ -13,7 +13,7 @@ push:
 build HOSTNAME *FLAGS:
     #!/usr/bin/env bash
     set -euo pipefail
-    nix build .#nixosConfigurations.{{ HOSTNAME }}.config.system.build.toplevel --log-format internal-json {{ FLAGS }} |& nom --json
+    nix build .#nixosConfigurations.{{ HOSTNAME }}.config.system.build.toplevel --log-format internal-json {{ FLAGS }} 2>&1 | nom --json
     if command -v attic >/dev/null 2>&1 && attic cache info aurelia >/dev/null 2>&1; then
         echo "Pushing to attic cache..."
         attic push aurelia ./result
