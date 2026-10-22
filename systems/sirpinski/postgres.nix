@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   services.postgresql = {
     enable = true;
 
@@ -26,7 +30,7 @@
       "max_parallel_maintenance_workers" = "4";
 
       "shared_preload_libraries" = "pg_stat_statements";
-	    "compute_query_id" = "on";
+      "compute_query_id" = "on";
     };
     ensureDatabases = ["gotosocial" "keycloak" "mastodon"];
     ensureUsers = [

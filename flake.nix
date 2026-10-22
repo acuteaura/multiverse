@@ -31,6 +31,15 @@
             ./systems/sirpinski
           ];
         };
+        perimeter = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            nixpkgsConfig
+            inputs.universe.nixosModules.universe
+            inputs.disko.nixosModules.disko
+            ./systems/perimeter
+          ];
+        };
         bootstrap = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
