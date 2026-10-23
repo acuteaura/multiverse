@@ -12,6 +12,8 @@
       url = "github:acuteaura/universe";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # everything runs on cyberacme
+    cyacrt.url = "github:containmentzone/cyacrt";
   };
   outputs = inputs @ {nixpkgs, ...}: let
     nixpkgsConfig = import ./nixpkgs-config.nix {
@@ -37,6 +39,7 @@
             nixpkgsConfig
             inputs.universe.nixosModules.universe
             inputs.disko.nixosModules.disko
+            inputs.cyacrt.nixosModules.default
             ./systems/perimeter
           ];
         };

@@ -3,6 +3,7 @@
 in {
   imports = [
     ./hardware-config.nix
+    ./cyac.nix
   ];
 
   universe.base.enable = true;
