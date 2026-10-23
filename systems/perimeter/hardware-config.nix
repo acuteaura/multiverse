@@ -57,17 +57,17 @@
         datasets = {
           "root" = {
             type = "zfs_fs";
-            options = {};
+            options.mountpoint = "legacy";
             mountpoint = "/";
           };
           "nix" = {
             type = "zfs_fs";
-            options.mountpoint = "/nix";
+            options.mountpoint = "legacy";
             mountpoint = "/nix";
           };
           "home" = {
             type = "zfs_fs";
-            options.mountpoint = "/home";
+            options.mountpoint = "legacy";
             mountpoint = "/home";
           };
         };
