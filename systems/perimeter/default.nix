@@ -25,9 +25,21 @@ in {
     networks."10-wan" = {
       matchConfig.Name = "en*";
       networkConfig = {
-        DHCP = "yes";
+        DHCP = "no";
         IPv6AcceptRA = true;
       };
+      address = [
+        "5.231.118.237/24"
+      ];
+      routes = [
+        {
+          Gateway = "5.231.118.1";
+        }
+      ];
+      dns = [
+        "1.1.1.1"
+        "1.0.0.1"
+      ];
     };
   };
 
