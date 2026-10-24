@@ -33,10 +33,6 @@
       multi_accept on;
     '';
 
-    appendConfig = ''
-      worker_processes auto;
-    '';
-
     virtualHosts."_" = {
       rejectSSL = true;
       default = true;
