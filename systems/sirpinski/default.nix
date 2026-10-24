@@ -6,8 +6,8 @@ in {
     ./hardware-config.nix
     ./postgres.nix
 
-    ./gts.nix
-    ./gts-backup.nix
+    #./gts.nix
+    #./gts-backup.nix
 
     ./mastodon.nix
 
